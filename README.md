@@ -1,2 +1,2 @@
-# drive_ros_homography_publisher
-simple node that publishes homography matrices
+# Homography Publisher
+Publishes a [homography message](https://github.com/tum-phoenix/drive_ros_msgs/blob/master/msg/Homography.msg) on a latched topic. The data is read from a calibration file (e.g. [this one](https://github.com/tum-phoenix/drive_ros_homography_publisher/blob/master/calib/ftm_rc_car_1_left_2208x1242.yaml)). It can be generated using the separate [homography estimator](https://github.com/tum-phoenix/drive_ros_camera_homography). 
