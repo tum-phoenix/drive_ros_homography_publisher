@@ -1,0 +1,15 @@
+<launch>
+
+    <!-- vehicle name e.g. ftm_rc_car_1 -->
+    <arg name="vehicle" default="ftm_rc_car_1"/>
+    <arg name="homography_topic" default="/camera/camera_homography"/>
+    <arg name="camera" default="left"/>
+    <arg name="resolution" default="2208x1242"/>
+    <arg name="output" default="log" />
+
+    <node name="homography_publisher$(arg camera)" pkg="homography_publisher" type="homo_pub" output="$(arg output)" >
+      <rosparam param="param_file_path" subst_value="true">$(find homography_publisher)/calib/$(arg vehicle)_$(arg camera)_$(arg resolution).yaml</rosparam>
+      <remap from="homography_out" to="$(arg homography_topic)"/>
+    </node>
+
+</launch>
