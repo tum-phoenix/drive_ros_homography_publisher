@@ -6,6 +6,7 @@ int main(int argc, char ** argv) {
     ros::init(argc, argv, "homography_publisher");
     ros::NodeHandle nh;
     ros::NodeHandle pnh("~");
+    ROS_INFO("---------------------------------------------------------------------------------");
 
     ros::Publisher pub = nh.advertise<drive_ros_msgs::Homography>("homography_out", 1, true);
     std::string param_file_path;
@@ -14,7 +15,7 @@ int main(int argc, char ** argv) {
       ROS_ERROR_STREAM("'param_file_path' is empty");
       return 1;
     }
-
+    
     ROS_INFO_STREAM("'param_file_path' is: " << param_file_path);
 
     cv::FileStorage fs(param_file_path, cv::FileStorage::READ);

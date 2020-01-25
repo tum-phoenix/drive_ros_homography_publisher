@@ -1,12 +1,12 @@
 <launch>
 
     <!-- vehicle name e.g. ftm_rc_car_1 -->
-    <arg name="vehicle" default="ftm_rc_car_1"/>
+    <arg name="vehicle" default="cc2019_car"/>
     <arg name="homography_topic" default="/camera/camera_homography"/>
     <arg name="output" default="log" />
 
-    <node name="homography_publisher" pkg="homography_publisher" type="homo_pub" output="$(arg output)" >
-      <rosparam param="param_file_path" subst_value="true">$(find homography_publisher)/calib/homography_$(arg vehicle).yaml</rosparam>
+    <node name="homography_publisher" pkg="drive_ros_homography_publisher" type="homo_pub" output="$(arg output)" >
+      <rosparam param="param_file_path" subst_value="true">$(find drive_ros_homography_publisher)/calib/homography_$(arg vehicle).yaml</rosparam>
       <remap from="homography_out" to="$(arg homography_topic)"/>
     </node>
 

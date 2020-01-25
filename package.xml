@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>homography_publisher</name>
+  <name>drive_ros_homography_publisher</name>
   <version>0.0.0</version>
   <description>The homography_publisher package</description>
 
